@@ -43,12 +43,19 @@ figcaption{font-size:14px;color:var(--muted);margin-top:6px}
 .pill{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;background:var(--brand-soft);color:var(--brand);font-weight:600}
 small{color:var(--muted)}
 html{scroll-behavior:smooth}
-section{scroll-margin-top:50px}
-.agenda{display:grid;gap:10px}
-.agenda a{display:grid;grid-template-columns:36px 1fr;column-gap:12px;align-items:center;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--soft)}
-.agenda a:hover{border-color:var(--brand);background:var(--brand-soft)}
-.agenda .n{grid-row:span 2;width:32px;height:32px;border-radius:50%;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
-.agenda a span:last-child{color:var(--muted);font-size:15px}
+section,h3[id]{scroll-margin-top:60px}
+.menu{display:none}
+@media (min-width:1260px){
+  nav{display:none}
+  section,h3[id]{scroll-margin-top:24px}
+  .menu{display:block;position:fixed;top:32px;left:max(16px,calc(50% - 430px - 270px));width:230px;max-height:calc(100vh - 64px);overflow-y:auto;font-size:14px}
+  .menu-title{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:8px}
+  .menu a{display:block;text-decoration:none;color:var(--muted);padding:5px 10px;border-left:2px solid var(--line);line-height:1.35}
+  .menu a.top{color:var(--ink);font-weight:600;margin-top:10px}
+  .menu a.sub{padding-left:22px;font-size:13px}
+  .menu a:hover{color:var(--brand)}
+  .menu a.active{color:var(--brand);border-left-color:var(--brand);background:var(--brand-soft)}
+}
 footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
 </style>
 </head>
@@ -57,20 +64,26 @@ footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid va
 <a href="#problem">Problem</a><a href="#q1">1 Validate</a><a href="#q2">2 Metrics</a><a href="#q3">3 User flow</a><a href="#q4">4 Roll-out</a><a href="#q5">5 Priorities</a>
 </div></nav>
 
+<aside class="menu" aria-label="Contents">
+  <div class="menu-title">Contents</div>
+  <a href="#problem">Problem and opportunity</a>
+  <a href="#q1" class="top">1. Validate the need</a>
+  <a href="#q1-hyp" class="sub">Hypotheses</a><a href="#q1-comp" class="sub">Competitors</a><a href="#q1-test" class="sub">Prototype test</a><a href="#q1-decision" class="sub">Decision</a>
+  <a href="#q2" class="top">2. Success metrics</a>
+  <a href="#q2-metrics" class="sub">3 headline metrics</a><a href="#q2-funnel" class="sub">Funnel</a><a href="#q2-evidence" class="sub">Evidence</a>
+  <a href="#q3" class="top">3. User stories and flow</a>
+  <a href="#q3-flow" class="sub">User flow</a>
+  <a href="#q4" class="top">4. Roll-out plan</a>
+  <a href="#q4-phases" class="sub">Phases</a><a href="#q4-gtm" class="sub">Go-to-market</a><a href="#q4-risks" class="sub">Risks</a>
+  <a href="#q5" class="top">5. Priorities</a>
+  <a href="#q5-dims" class="sub">Dimensions</a><a href="#q5-info" class="sub">Information needed</a><a href="#q5-sheet" class="sub">Full sheet</a>
+</aside>
 <div class="wrap">
 <header>
   <p class="tag">Product manager homework · 9 Nov 2026 · Maris Palopääl</p>
   <h1>Amplemarket Competitive Intelligence (CI)</h1>
   <p class="lead">A simple plan: why CI, how to check it, how to measure it, how it looks, how to launch it, and what to build first.</p>
   <div class="box warn"><b>Note:</b> all numbers on this page are guesses to test. I do not have Amplemarket internal data. The prototype uses example data.</div>
-  <h3 style="margin-top:24px">Agenda <small>(click to jump)</small></h3>
-  <div class="agenda">
-    <a href="#q1"><span class="n">1</span><b>Validate the need</b><span>How I check that people want CI before we build it.</span></a>
-    <a href="#q2"><span class="n">2</span><b>Success metrics</b><span>Three numbers that show if CI works, and why.</span></a>
-    <a href="#q3"><span class="n">3</span><b>User stories and flow</b><span>The clickable prototype and the user flow in 5 steps.</span></a>
-    <a href="#q4"><span class="n">4</span><b>Roll-out plan</b><span>How CI goes from internal use to everyone.</span></a>
-    <a href="#q5"><span class="n">5</span><b>Priorities</b><span>How I choose what to build first among 4 modules.</span></a>
-  </div>
 </header>
 
 <section id="problem">
@@ -92,7 +105,7 @@ footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid va
   <h2>How would I validate the need before building?</h2>
   <p class="lead">Seven steps. Steps that do not depend on each other run at the same time, so it takes about <b>6 weeks</b> to a go / no-go decision.</p>
 
-  <h3>Step 1. Write the hypotheses</h3>
+  <h3 id="q1-hyp">Step 1. Write the hypotheses</h3>
   <p>Before talking to anyone, write the job the customer wants done and the riskiest assumptions. Each one gets a number, so the team agrees in advance what success means.</p>
   <p><b>Job to be done:</b> “When I plan my weekly outreach, I want to know who is evaluating my competitors right now, so I can contact them while they are still deciding.”</p>
   <ul>
@@ -102,7 +115,7 @@ footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid va
     <li><b>H4 Value:</b> customers would pay extra for it.</li>
   </ul>
 
-  <h3>Step 2. Competitor and market analysis</h3>
+  <h3 id="q1-comp">Step 2. Competitor and market analysis</h3>
   <p>Who else solves this job, how well, and where is the gap? I list alternatives in three groups (intent data vendors, engagement tools with signals, manual workarounds), collect facts from vendor pages, G2 reviews, demos and win/loss notes, and compare them on the same questions: which signal, person or company level, how fresh, what price.</p>
   <div class="scroll"><table>
     <tr><th>Alternative</th><th>Type</th><th>Level</th><th>Gap CI can fill</th></tr>
@@ -122,7 +135,7 @@ footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid va
     <li><b>Churn:</b> how many customers left and said they missed competitor intelligence.</li>
   </ul>
 
-  <h3>Step 4. Test a clickable prototype</h3>
+  <h3 id="q1-test">Step 4. Test a clickable prototype</h3>
   <p>Show a prototype to real users before engineers build anything. Does the user understand the value, finish the task, trust the data, accept the price? I run 8–10 one-hour remote interviews: 4 sales development reps, 3 account executives or leaders, 2 customer success managers, 1 revenue operations person. I mix heavy CI users, non-users and customers who lost a deal to a competitor.</p>
   <p><b>Task:</b> “Find who is evaluating Outreach this week and start a sequence for the top five.” I watch where they hesitate and ask: “Would you contact this person based on this evidence?” and “What would you pay per month?” The prototype for this is in <a href="#q3">question 3</a>.</p>
 
@@ -146,7 +159,7 @@ footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid va
     <tr><td>7. Bigger check</td><td>Weeks 4–5, only if needed</td><td>Survey or price test</td></tr>
   </table></div>
   <div class="box"><b>Check the data side too.</b> CI only works if the predictions are right. Take 50 flagged people per beta customer and ask how many were real buyers. If precision is below about 30%, fix the model first. Wrong leads kill trust faster than missing features.</div>
-  <h3>The decision</h3>
+  <h3 id="q1-decision">The decision</h3>
   <ul>
     <li>Strong interviews and beta → <b>build the full feature</b>.</li>
     <li>Positive interviews but weak lead quality → <b>improve the model first</b>.</li>
@@ -160,7 +173,7 @@ footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid va
   <h2>Three metrics to measure success</h2>
   <p class="lead">I follow one funnel, from the first time an account sees CI to the money it brings. Three headline metrics say if CI works. The other steps show where accounts drop off.</p>
 
-  <h3>The three headline metrics</h3>
+  <h3 id="q2-metrics">The three headline metrics</h3>
   <div class="scroll"><table>
     <tr><th>Metric</th><th>Definition</th><th>Why it matters</th><th>Start target</th></tr>
     <tr><td><b>1. CI activation rate</b><br><small>activation</small></td><td>% of accounts that add a competitor and send their first CI lead to a sequence within 14 days of first opening CI</td><td>Shows reps act on a competitor signal. A signal nobody uses has no value.</td><td>50% of accounts</td></tr>
@@ -169,7 +182,7 @@ footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid va
   </table></div>
   <p><b>Guardrail: lead precision.</b> % of flagged people that the customer marks as real competitor evaluators (with a good lead / bad lead button), plus unsubscribe and spam rates on CI sequences. If precision drops, the three metrics above fall later.</p>
 
-  <h3>The CI funnel</h3>
+  <h3 id="q2-funnel">The CI funnel</h3>
   <p>The biggest drop between two steps is where I work first. For example, a big drop between steps 2 and 3 means the feed is empty or signals are not clear. Between 3 and 4 it means reps do not trust the lead.</p>
   <div class="scroll"><table>
     <tr><th>Step</th><th>Question</th><th>Metric</th><th>Start target</th></tr>
@@ -188,7 +201,7 @@ footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid va
   <p>Every feature gets the same set from day one of the internal phase: discovery, activation, usage, weekly retention (at 4, 8 and 12 weeks), frequency, breadth, total active users, outcome and satisfaction (NPS). Events flow from the product into the data warehouse and show on one dashboard per feature. No feature launches without it. CI adds one more: <b>lead precision</b>.</p>
   <p><b>Does CI solve the need?</b> Two simple checks: the share of leads customers mark as good, and a one-question survey after 30 days, “How would you feel if you could no longer use CI?” At least 40% should say “very disappointed”.</p>
 
-  <h3>Evidence from a customer story</h3>
+  <h3 id="q2-evidence">Evidence from a customer story</h3>
   <p>I read Amplemarket’s public customer stories for results about competitive signals. Only one fits: <b>Vanta</b> reported a 9x return on investment on signals, six-figure ARR in the first quarter from one campaign, and signal leads with the highest engagement rate of any lead source. This supports metrics 1 and 3.</p>
 </section>
 
@@ -204,7 +217,7 @@ footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid va
   <div class="box"><b>44 user stories in 10 epics:</b> Setup (7), Daily prospecting (5), Lead evaluation and trust (4), Actioning (5), Churn risk (3), Alerts and digest (3), Feedback and quality (3), Admin and permissions (4), Cross-product (4), Edge cases (6).<br>
   By priority: <b>MVP 23</b> · <b>V1 18</b> · <b>Later 3</b>. Each story has acceptance points and an “Open in prototype” link.</div>
 
-  <h3>The user flow in 5 steps</h3>
+  <h3 id="q3-flow">The user flow in 5 steps</h3>
   <ol>
     <li><b>Find it.</b> CI is a new card in Duo Copilot and a menu item in the left sidebar.</li>
     <li><b>Set it up.</b> Admin adds up to 5 competitors, sets filters and exclusions (customers, open deals, competitor staff), and connects the CRM.</li>
@@ -244,7 +257,7 @@ footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid va
   <div class="box"><b>How long?</b> Following the planned steps takes about <b>2–4 weeks in total</b>. The release itself can take up to <b>4 weeks</b>, depending on how many bugs we find and other things we learn on the way.</div>
   <p>The method follows a recent public integration launch: a small closed group first, access per account, one contact person for feedback, one launch day, and a follow-up campaign for people who set it up but did not use it.</p>
 
-  <h3>Roll-out phases</h3>
+  <h3 id="q4-phases">Roll-out phases</h3>
   <div class="scroll"><table>
     <tr><th>Phase</th><th>Who</th><th>What happens</th></tr>
     <tr><td><b>1. Internal</b></td><td>Amplemarket’s own sales team (5–10 users), on their own pipeline</td><td>Use CI every day, log bugs, check lead quality with the data team. Support and sales learn the product.</td></tr>
@@ -253,7 +266,7 @@ footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid va
     <tr><td><b>4. General availability</b></td><td>Everyone on eligible plans, on by default</td><td>Launch day with all go-to-market channels live. Review the headline metrics after 30 and 90 days.</td></tr>
   </table></div>
 
-  <h3>Go-to-market and communication steps</h3>
+  <h3 id="q4-gtm">Go-to-market and communication steps</h3>
   <p>Most steps start during the beta phases and run in parallel, so everything is ready on launch day.</p>
   <div class="scroll"><table>
     <tr><th>#</th><th>Step</th><th>Owner</th><th>Output</th></tr>
@@ -268,7 +281,7 @@ footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid va
   </table></div>
   <p>Step 8 uses the same funnel as the success metrics in <a href="#q2">question 2</a>. The biggest drop decides where the follow-up campaign points.</p>
 
-  <h3>Risks and fallback</h3>
+  <h3 id="q4-risks">Risks and fallback</h3>
   <ul>
     <li><b>Low lead precision:</b> pause the roll-out and fix the model before the next phase.</li>
     <li><b>Privacy complaints:</b> a kill switch for each data source, and one named person who answers.</li>
@@ -284,7 +297,7 @@ footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid va
   <h2>How I would prioritize four modules</h2>
   <p class="lead">CI plus three other modules must ship by the end of the year. I score every module on the same five questions, so the choice is based on data and not on opinions.</p>
 
-  <h3>The five dimensions</h3>
+  <h3 id="q5-dims">The five dimensions</h3>
   <div class="grid">
     <div class="card"><b>Revenue opportunity</b>How much ARR is lost or at risk because this is missing or weak? <small>Owner: Finance / RevOps</small></div>
     <div class="card"><b>Strategic importance</b>How much feedback do we get, and how happy are users (NPS)? <small>Owner: Product</small></div>
@@ -293,7 +306,7 @@ footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid va
     <div class="card"><b>Competitive necessity</b>Are ZoomInfo, Apollo, Lusha, Cognism, Outreach and Salesloft better than us here? <small>Owner: Product marketing</small></div>
   </div>
 
-  <h3>What information I need</h3>
+  <h3 id="q5-info">What information I need</h3>
   <div class="scroll"><table>
     <tr><th>Dimension</th><th>Data</th><th>Where to get it</th></tr>
     <tr><td>Revenue</td><td>ARR lost or at risk in 12 months because of this module</td><td>Churn survey, CRM lost-deal reasons, finance</td></tr>
@@ -318,7 +331,7 @@ footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid va
   <div class="tldr">CI scores lower on money and effort than the core products, but it is the only one where every competitor is behind. That is why I keep it in the plan.</div>
   <p><small>All inputs are my estimates, not Amplemarket data. Replace them with real data from the owners above. The scales can be edited in the sheet’s Config tab.</small></p>
 
-  <h3>See the full sheet</h3>
+  <h3 id="q5-sheet">See the full sheet</h3>
   <p>Open it online or download the file. It has four tabs: the matrix, how to score, the scales, and the competitor view.</p>
   <p>
     <a class="btn" href="https://docs.google.com/spreadsheets/d/1YcPDHras4taWRcsxGxrEnFZKuC-7PO0V/edit?gid=43957463#gid=43957463" target="_blank" rel="noopener">Open the sheet (Google Sheets)</a>
@@ -328,5 +341,18 @@ footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid va
 
 <footer>Maris Palopääl · Amplemarket PM homework · 9 Nov 2026</footer>
 </div>
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.menu a'));
+  var map=links.map(function(a){return {a:a,el:document.getElementById(a.getAttribute('href').slice(1))}}).filter(function(x){return x.el});
+  function spy(){
+    var cur=null,y=window.scrollY+120;
+    map.forEach(function(x){if(x.el.getBoundingClientRect().top+window.scrollY<=y)cur=x});
+    links.forEach(function(a){a.classList.remove('active')});
+    if(cur)cur.a.classList.add('active');
+  }
+  window.addEventListener('scroll',spy,{passive:true});spy();
+})();
+</script>
 </body>
 </html>
