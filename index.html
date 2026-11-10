@@ -48,13 +48,15 @@ section,h3[id]{scroll-margin-top:60px}
 @media (min-width:1260px){
   nav{display:none}
   section,h3[id]{scroll-margin-top:24px}
-  .menu{display:block;position:fixed;top:32px;left:max(16px,calc(50% - 430px - 270px));width:230px;max-height:calc(100vh - 64px);overflow-y:auto;font-size:14px}
-  .menu-title{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:8px}
-  .menu a{display:block;text-decoration:none;color:var(--muted);padding:5px 10px;border-left:2px solid var(--line);line-height:1.35}
-  .menu a.top{color:var(--ink);font-weight:600;margin-top:10px}
-  .menu a.sub{padding-left:22px;font-size:13px}
-  .menu a:hover{color:var(--brand)}
-  .menu a.active{color:var(--brand);border-left-color:var(--brand);background:var(--brand-soft)}
+  .menu{display:block;position:fixed;top:24px;left:max(16px,calc(50% - 430px - 280px));width:244px;max-height:calc(100vh - 48px);overflow-y:auto;font-size:14px;background:#141a26;color:#c9d2e3;border-radius:16px;padding:16px 10px;box-shadow:0 8px 28px rgba(10,15,30,.25)}
+  .menu-title{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7e8aa3;font-weight:700;margin:0 8px 8px}
+  .menu a{display:flex;align-items:center;gap:10px;text-decoration:none;color:#aab5cb;padding:6px 8px;border-radius:8px;line-height:1.3}
+  .menu a svg{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:.85}
+  .menu a.top{color:#fff;font-weight:600;margin-top:10px}
+  .menu a.sub{padding-left:26px;font-size:13px}
+  .menu a:hover{background:#202941;color:#fff}
+  .menu a.active{background:#2257e7;color:#fff}
+  .menu a.active svg{opacity:1}
 }
 footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
 </style>
@@ -66,17 +68,17 @@ footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid va
 
 <aside class="menu" aria-label="Contents">
   <div class="menu-title">Contents</div>
-  <a href="#problem">Problem and opportunity</a>
-  <a href="#q1" class="top">1. Validate the need</a>
-  <a href="#q1-hyp" class="sub">Hypotheses</a><a href="#q1-comp" class="sub">Competitors</a><a href="#q1-test" class="sub">Prototype test</a><a href="#q1-decision" class="sub">Decision</a>
-  <a href="#q2" class="top">2. Success metrics</a>
-  <a href="#q2-metrics" class="sub">3 headline metrics</a><a href="#q2-funnel" class="sub">Funnel</a><a href="#q2-evidence" class="sub">Evidence</a>
-  <a href="#q3" class="top">3. User stories and flow</a>
-  <a href="#q3-flow" class="sub">User flow</a>
-  <a href="#q4" class="top">4. Roll-out plan</a>
-  <a href="#q4-phases" class="sub">Phases</a><a href="#q4-gtm" class="sub">Go-to-market</a><a href="#q4-risks" class="sub">Risks</a>
-  <a href="#q5" class="top">5. Priorities</a>
-  <a href="#q5-dims" class="sub">Dimensions</a><a href="#q5-info" class="sub">Information needed</a><a href="#q5-sheet" class="sub">Full sheet</a>
+  <a href="#problem"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg><span>Problem and opportunity</span></a>
+  <a href="#q1" class="top"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg><span>1. Validate the need</span></a>
+  <a href="#q1-hyp" class="sub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7c.6.5 1 1.2 1 2V17h6v-.3c0-.8.4-1.5 1-2A7 7 0 0012 2z"/></svg><span>Hypotheses</span></a><a href="#q1-comp" class="sub"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-4 3-6 7-6s7 2 7 6M17 5a3.5 3.5 0 010 7M22 20c0-3-2-5-4-5.5"/></svg><span>Competitors</span></a><a href="#q1-test" class="sub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-6 1.5L10 20z"/></svg><span>Prototype test</span></a><a href="#q1-decision" class="sub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg><span>Decision</span></a>
+  <a href="#q2" class="top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>2. Success metrics</span></a>
+  <a href="#q2-metrics" class="sub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><span>3 headline metrics</span></a><a href="#q2-funnel" class="sub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18l-7 8v7l-4 2v-9z"/></svg><span>Funnel</span></a><a href="#q2-evidence" class="sub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/></svg><span>Evidence</span></a>
+  <a href="#q3" class="top"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><span>3. User stories and flow</span></a>
+  <a href="#q3-flow" class="sub"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 5h7a3 3 0 010 6H10a3 3 0 000 6h7"/></svg><span>User flow</span></a>
+  <a href="#q4" class="top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4h12l-2 4 2 4H5"/></svg><span>4. Roll-out plan</span></a>
+  <a href="#q4-phases" class="sub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg><span>Phases</span></a><a href="#q4-gtm" class="sub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11v3l12 5V6zM15 9a3 3 0 010 6M6 14l1 6h3l-1-5"/></svg><span>Go-to-market</span></a><a href="#q4-risks" class="sub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18h.01"/></svg><span>Risks</span></a>
+  <a href="#q5" class="top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg><span>5. Priorities</span></a>
+  <a href="#q5-dims" class="sub"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg><span>Dimensions</span></a><a href="#q5-info" class="sub"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg><span>Information needed</span></a><a href="#q5-sheet" class="sub"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 10h18M3 15h18M9 4v16"/></svg><span>Full sheet</span></a>
 </aside>
 <div class="wrap">
 <header>
