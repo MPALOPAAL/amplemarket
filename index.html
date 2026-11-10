@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Amplemarket Competitive Intelligence – PM homework</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+:root{--bg:#fff;--ink:#1c2230;--muted:#5b6577;--line:#e3e7ee;--soft:#f5f7fb;--brand:#2257e7;--brand-soft:#e9f0ff;--warn:#fff6e0}
+@media (prefers-color-scheme:dark){:root{--bg:#10141c;--ink:#e8ecf4;--muted:#9aa4b8;--line:#272e3c;--soft:#171c27;--brand:#6b95ff;--brand-soft:#18233f;--warn:#2b2412}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 80px}
+nav{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+nav .wrap{display:flex;gap:6px;overflow-x:auto;padding:10px 16px}
+nav a{white-space:nowrap;text-decoration:none;color:var(--muted);font-size:14px;padding:6px 12px;border-radius:20px;border:1px solid var(--line)}
+nav a:hover{color:var(--brand);border-color:var(--brand)}
+header{padding:48px 0 8px}
+header p.tag{color:var(--brand);font-weight:600;font-size:14px;margin:0 0 8px}
+h1{font-size:34px;line-height:1.2;margin:0 0 12px}
+h2{font-size:26px;margin:0 0 6px;line-height:1.25}
+h3{font-size:19px;margin:28px 0 6px}
+section{padding-top:56px}
+.q{color:var(--brand);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.lead{color:var(--muted);margin:0 0 14px}
+.box{background:var(--brand-soft);border-radius:12px;padding:14px 18px;margin:16px 0}
+.warn{background:var(--warn)}
+.tldr{border-left:4px solid var(--brand);padding:2px 0 2px 16px;margin:14px 0;font-weight:600}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--soft);font-weight:600}
+.scroll{overflow-x:auto}
+ul,ol{padding-left:22px}
+li{margin:4px 0}
+img{max-width:100%;border:1px solid var(--line);border-radius:10px;display:block}
+figure{margin:18px 0}
+figcaption{font-size:14px;color:var(--muted);margin-top:6px}
+.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;padding:10px 18px;border-radius:8px;font-weight:600;font-size:16px;margin:6px 8px 6px 0}
+.btn.alt{background:transparent;color:var(--brand);border:1px solid var(--brand)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.card{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--soft)}
+.card b{display:block;margin-bottom:4px}
+.pill{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;background:var(--brand-soft);color:var(--brand);font-weight:600}
+small{color:var(--muted)}
+footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a href="#problem">Problem</a><a href="#q1">1 Validate</a><a href="#q2">2 Metrics</a><a href="#q3">3 User flow</a><a href="#q4">4 Roll-out</a><a href="#q5">5 Priorities</a>
+</div></nav>
+
+<div class="wrap">
+<header>
+  <p class="tag">Product manager homework · 9 Nov 2026 · Maris Palopääl</p>
+  <h1>Amplemarket Competitive Intelligence (CI)</h1>
+  <p class="lead">A simple plan: why CI, how to check it, how to measure it, how it looks, how to launch it, and what to build first.</p>
+  <div class="box warn"><b>Note:</b> all numbers on this page are guesses to test. I do not have Amplemarket internal data. The prototype uses example data.</div>
+</header>
+
+<section id="problem">
+  <h2>Problem and opportunity</h2>
+  <p>CI shows sellers the exact people who are looking at a competitor <b>right now</b>. The seller can write to them before the competitor does. CI uses public signals (competitor ads, LinkedIn posts and employees, events) and gives data about a <b>person</b>, not only a company.</p>
+  <h3>Who it is for</h3>
+  <ul>
+    <li><b>Sales teams</b> (sales development reps, account executives, sales leaders) who fight against 2–5 clear rivals, for example ZoomInfo, Apollo or Outreach.</li>
+    <li><b>Customer success teams</b> who want to see if their own customers look at competitors (churn prevention).</li>
+  </ul>
+  <h3>The pain today (my guess)</h3>
+  <p>Reps do not know who is in a buying journey, so they send the same cold email to everyone. CI gives a person and a reason to write today. But CI is still a separate view, not connected to sequences, Duo Copilot or Unibox.</p>
+  <div class="tldr">Goal: turn a CI signal into a sequence and a conversation in one click, so CI is a weekly work tool and not a report you set up once.</div>
+</section>
+
+<!-- ========== 1 ========== -->
+<section id="q1">
+  <div class="q">Question 1</div>
+  <h2>How would I validate the need before building?</h2>
+  <p class="lead">Seven steps. Steps that do not depend on each other run at the same time, so it takes about <b>6 weeks</b> to a go / no-go decision.</p>
+
+  <h3>Step 1. Write the hypotheses</h3>
+  <p>Before talking to anyone, write the job the customer wants done and the riskiest assumptions. Each one gets a number, so the team agrees in advance what success means.</p>
+  <p><b>Job to be done:</b> “When I plan my weekly outreach, I want to know who is evaluating my competitors right now, so I can contact them while they are still deciding.”</p>
+  <ul>
+    <li><b>H1 Need:</b> sellers have no good way today to find people who are evaluating a competitor.</li>
+    <li><b>H2 Accuracy:</b> our signals point to real buyers often enough to act on them.</li>
+    <li><b>H3 Behavior:</b> reps would turn a signal into a sequence inside Amplemarket, not export it to another tool.</li>
+    <li><b>H4 Value:</b> customers would pay extra for it.</li>
+  </ul>
+
+  <h3>Step 2. Competitor and market analysis</h3>
+  <p>Who else solves this job, how well, and where is the gap? I list alternatives in three groups (intent data vendors, engagement tools with signals, manual workarounds), collect facts from vendor pages, G2 reviews, demos and win/loss notes, and compare them on the same questions: which signal, person or company level, how fresh, what price.</p>
+  <div class="scroll"><table>
+    <tr><th>Alternative</th><th>Type</th><th>Level</th><th>Gap CI can fill</th></tr>
+    <tr><td>ZoomInfo, Cognism, Apollo</td><td>Data vendors with intent</td><td>Mostly company</td><td>No contact-level competitor signal</td></tr>
+    <tr><td>Outreach, Salesloft</td><td>Engagement tools</td><td>Person, inside their tool</td><td>Do not show who engages with a competitor</td></tr>
+    <tr><td>6sense, Demandbase, G2 Buyer Intent</td><td>Account intent</td><td>Company</td><td>Cannot name the person</td></tr>
+    <tr><td>Manual LinkedIn watching</td><td>Workaround</td><td>Person, by hand</td><td>Slow, does not scale</td></tr>
+  </table></div>
+  <p><small>My hypotheses from general market knowledge. Check each row before use.</small></p>
+  <p><b>Result:</b> “Person-level, competitor-specific signals from public data, ready to put in a sequence.” Competitors are behind here, so CI is a <b>differentiator</b>. It must win on accuracy, not on matching features. Risks to check: GDPR, LinkedIn terms, and a bigger vendor copying it.</p>
+
+  <h3>Step 3. Look at real behavior and existing data</h3>
+  <p>Opinions can be wrong; behavior shows what people really do. Use data we already have before new research. Examples of what I would look for (illustrative numbers):</p>
+  <ul>
+    <li><b>Usage:</b> 120 accounts have CI, 45 (37%) open it every week, 30 export leads by hand to a spreadsheet. The export shows they miss the link to sequences.</li>
+    <li><b>Sales and support:</b> a competitor is named in 22% of lost deals; CI is asked about in 14% of demos.</li>
+    <li><b>Churn:</b> how many customers left and said they missed competitor intelligence.</li>
+  </ul>
+
+  <h3>Step 4. Test a clickable prototype</h3>
+  <p>Show a prototype to real users before engineers build anything. Does the user understand the value, finish the task, trust the data, accept the price? I run 8–10 one-hour remote interviews: 4 sales development reps, 3 account executives or leaders, 2 customer success managers, 1 revenue operations person. I mix heavy CI users, non-users and customers who lost a deal to a competitor.</p>
+  <p><b>Task:</b> “Find who is evaluating Outreach this week and start a sequence for the top five.” I watch where they hesitate and ask: “Would you contact this person based on this evidence?” and “What would you pay per month?” The prototype for this is in <a href="#q3">question 3</a>.</p>
+
+  <h3>Step 5. Design partners</h3>
+  <p>5–8 friendly B2B software customers with 2–5 clear competitors test early versions. I give each a list of 50 people CI would flag and ask: “How many are really in a buying process?” This is a precision check before we build. I also ask what they need to connect (CRM, Slack) and what legal review they need.</p>
+
+  <h3>Step 6. Narrow beta with real data</h3>
+  <p>Build the smallest version that tests the main promise and release it to 15–20 customers behind a feature flag. Scope: set up competitors, the feed, lead detail with evidence, one-click add to sequence. I track <code>ci_feed_opened</code>, <code>ci_lead_viewed</code>, <code>ci_lead_added_to_sequence</code>, <code>ci_lead_marked_bad</code>, replies and meetings. I also interview customers who did not start, to learn why.</p>
+
+  <h3>Step 7. Bigger check (only if results disagree)</h3>
+  <p>If interviews say yes but the beta says no (or the other way round), I run a short survey with about 50 customers on value and three price options (add-on, higher plan, pay per lead).</p>
+
+  <div class="scroll"><table>
+    <tr><th>Step</th><th>When</th><th>Output</th></tr>
+    <tr><td>1. Hypotheses</td><td>Week 1</td><td>3–4 hypotheses with numbers</td></tr>
+    <tr><td>2. Competitor analysis</td><td>Weeks 1–2</td><td>Competitor table, positioning line</td></tr>
+    <tr><td>3. Existing data</td><td>Week 1</td><td>Usage and sales-signal summary</td></tr>
+    <tr><td>4. Prototype test</td><td>Weeks 2–4</td><td>Interview report with clips</td></tr>
+    <tr><td>5. Design partners</td><td>Weeks 2–4</td><td>Partner list and precision check</td></tr>
+    <tr><td>6. Narrow beta</td><td>Weeks 3–6</td><td>Beta results dashboard</td></tr>
+    <tr><td>7. Bigger check</td><td>Weeks 4–5, only if needed</td><td>Survey or price test</td></tr>
+  </table></div>
+  <div class="box"><b>Check the data side too.</b> CI only works if the predictions are right. Take 50 flagged people per beta customer and ask how many were real buyers. If precision is below about 30%, fix the model first. Wrong leads kill trust faster than missing features.</div>
+  <h3>The decision</h3>
+  <ul>
+    <li>Strong interviews and beta → <b>build the full feature</b>.</li>
+    <li>Positive interviews but weak lead quality → <b>improve the model first</b>.</li>
+    <li>Customers like it only inside an existing tool → <b>fold CI into Sequences and Searcher</b> instead of a separate module.</li>
+  </ul>
+</section>
+
+<!-- ========== 2 ========== -->
+<section id="q2">
+  <div class="q">Question 2</div>
+  <h2>Three metrics to measure success</h2>
+  <p class="lead">I follow one funnel, from the first time an account sees CI to the money it brings. Three headline metrics say if CI works. The other steps show where accounts drop off.</p>
+
+  <h3>The three headline metrics</h3>
+  <div class="scroll"><table>
+    <tr><th>Metric</th><th>Definition</th><th>Why it matters</th><th>Start target</th></tr>
+    <tr><td><b>1. CI activation rate</b><br><small>activation</small></td><td>% of accounts that add a competitor and send their first CI lead to a sequence within 14 days of first opening CI</td><td>Shows reps act on a competitor signal. A signal nobody uses has no value.</td><td>50% of accounts</td></tr>
+    <tr><td><b>2. Weekly active CI accounts</b><br><small>usage</small></td><td>% of CI accounts that add at least 1 CI lead to a sequence in a week</td><td>Shows CI is a weekly habit, not a one-time test. Links to renewal and upsell.</td><td>40% after 3 months</td></tr>
+    <tr><td><b>3. CI-sourced meetings and ROI</b><br><small>outcome</small></td><td>Meetings and closed annual recurring revenue (ARR) from CI leads per active account per month, compared with CI price and other lead sources</td><td>The business result. Also proves that people who look at a competitor are more likely to buy.</td><td>CI leads convert 1.5x better than other sources; pays back 3x in 90 days</td></tr>
+  </table></div>
+  <p><b>Guardrail: lead precision.</b> % of flagged people that the customer marks as real competitor evaluators (with a good lead / bad lead button), plus unsubscribe and spam rates on CI sequences. If precision drops, the three metrics above fall later.</p>
+
+  <h3>The CI funnel</h3>
+  <p>The biggest drop between two steps is where I work first. For example, a big drop between steps 2 and 3 means the feed is empty or signals are not clear. Between 3 and 4 it means reps do not trust the lead.</p>
+  <div class="scroll"><table>
+    <tr><th>Step</th><th>Question</th><th>Metric</th><th>Start target</th></tr>
+    <tr><td>1. Discovery</td><td>Do they notice CI?</td><td>% of active accounts that open CI in 30 days</td><td>60%</td></tr>
+    <tr><td>2. Setup</td><td>Do they add competitors?</td><td>% that add 1+ competitor</td><td>60%</td></tr>
+    <tr><td>3. First signal seen</td><td>Do they see a real person?</td><td>% that open a lead detail in 7 days</td><td>70%</td></tr>
+    <tr><td>4. Activation</td><td>Do they act on it?</td><td>% that add a lead to a sequence in 14 days</td><td>50% of accounts</td></tr>
+    <tr><td>5. First result</td><td>Does a reply or meeting follow?</td><td>% with a CI meeting in 30 days</td><td>40%</td></tr>
+    <tr><td>6. Habit</td><td>Do they come back weekly?</td><td>Weekly active CI accounts</td><td>40% at 3 months</td></tr>
+    <tr><td>7. Breadth</td><td>Do many reps use it?</td><td>% of seats using CI monthly</td><td>30%</td></tr>
+    <tr><td>8. Outcome</td><td>Does it make money?</td><td>Meetings, ARR, ROI vs other sources</td><td>See metric 3</td></tr>
+    <tr><td>9. Retention</td><td>Still used after 90 days?</td><td>% of activated accounts active at week 12</td><td>60%</td></tr>
+  </table></div>
+
+  <h3>Standard metrics for every feature</h3>
+  <p>Every feature gets the same set from day one of the internal phase: discovery, activation, usage, weekly retention (at 4, 8 and 12 weeks), frequency, breadth, total active users, outcome and satisfaction (NPS). Events flow from the product into the data warehouse and show on one dashboard per feature. No feature launches without it. CI adds one more: <b>lead precision</b>.</p>
+  <p><b>Does CI solve the need?</b> Two simple checks: the share of leads customers mark as good, and a one-question survey after 30 days, “How would you feel if you could no longer use CI?” At least 40% should say “very disappointed”.</p>
+
+  <h3>Evidence from a customer story</h3>
+  <p>I read Amplemarket’s public customer stories for results about competitive signals. Only one fits: <b>Vanta</b> reported a 9x return on investment on signals, six-figure ARR in the first quarter from one campaign, and signal leads with the highest engagement rate of any lead source. This supports metrics 1 and 3.</p>
+</section>
+
+<!-- ========== 3 ========== -->
+<section id="q3">
+  <div class="q">Question 3</div>
+  <h2>User stories and wireframes</h2>
+  <p class="lead">I built a clickable prototype instead of paper wireframes. The user stories are inside it.</p>
+  <p>
+    <a class="btn" href="https://ember-lunge-pwhnr.ship.place/#home" target="_blank" rel="noopener">Open the clickable prototype</a>
+    <a class="btn alt" href="https://ember-lunge-pwhnr.ship.place/#stories" target="_blank" rel="noopener">Open the user stories</a>
+  </p>
+  <div class="box"><b>44 user stories in 10 epics:</b> Setup (7), Daily prospecting (5), Lead evaluation and trust (4), Actioning (5), Churn risk (3), Alerts and digest (3), Feedback and quality (3), Admin and permissions (4), Cross-product (4), Edge cases (6).<br>
+  By priority: <b>MVP 23</b> · <b>V1 18</b> · <b>Later 3</b>. Each story has acceptance points and an “Open in prototype” link.</div>
+
+  <h3>The user flow in 5 steps</h3>
+  <ol>
+    <li><b>Find it.</b> CI is a new card in Duo Copilot and a menu item in the left sidebar.</li>
+    <li><b>Set it up.</b> Admin adds up to 5 competitors, sets filters and exclusions (customers, open deals, competitor staff), and connects the CRM.</li>
+    <li><b>See the feed.</b> A weekly list of people with score, top signal and competitor. Filters on the left.</li>
+    <li><b>Trust the lead.</b> Open a person and see “Why this lead surfaced”, the score reasons and the signals with source links.</li>
+    <li><b>Act.</b> Add to a sequence or list in one click, or “Sequence top 5”. Mark bad leads. Customers who look at competitors go to a Churn risk tab.</li>
+  </ol>
+
+  <figure><img src="assets/home.png" alt="Duo Copilot home with the new Competitive Intelligence card" loading="lazy">
+  <figcaption><b>1. Entry point.</b> New CI card in Duo Copilot and a link in the sidebar.</figcaption></figure>
+
+  <figure><img src="assets/setup-2.png" alt="CI setup: add competitors" loading="lazy">
+  <figcaption><b>2. Setup.</b> Add competitors, then set filters and exclusions.</figcaption></figure>
+
+  <figure><img src="assets/feed.png" alt="CI feed with leads, scores and signals" loading="lazy">
+  <figcaption><b>3. The feed.</b> Weekly numbers on top, tabs for High intent, My territory and Churn risk, a banner that shows who was hidden and why.</figcaption></figure>
+
+  <figure><img src="assets/feed-lead-L1.png" alt="Lead detail with score reasons and signals" loading="lazy">
+  <figcaption><b>4. Lead detail.</b> The reasons come before the score. Every signal has a source link. This builds trust.</figcaption></figure>
+
+  <figure><img src="assets/feed-seq-L1.png" alt="Add lead to a sequence from CI" loading="lazy">
+  <figcaption><b>5. One-click action.</b> Send the lead to a sequence without leaving CI.</figcaption></figure>
+
+  <figure><img src="assets/ci-settings-notifications.png" alt="CI notification settings" loading="lazy">
+  <figcaption><b>Alerts.</b> Weekly digest and instant alerts for high-intent people.</figcaption></figure>
+
+  <figure><img src="assets/stories.png" alt="User stories panel in the prototype" loading="lazy">
+  <figcaption><b>User stories.</b> Filter by epic, priority and source. Each story links to its screen.</figcaption></figure>
+  <p><small>CI screens are a proposal based on public information (amplemarket.com, help center). No real CI interface was available. All data is example data.</small></p>
+</section>
+
+<!-- ========== 4 ========== -->
+<section id="q4">
+  <div class="q">Question 4</div>
+  <h2>Roll-out and go-to-market plan</h2>
+  <p class="lead">This plan starts when CI is built and works. CI goes live in four phases, then a launch with all channels ready on the same day.</p>
+  <div class="box"><b>How long?</b> Following the planned steps takes about <b>2–4 weeks in total</b>. The release itself can take up to <b>4 weeks</b>, depending on how many bugs we find and other things we learn on the way.</div>
+  <p>The method follows a recent public integration launch: a small closed group first, access per account, one contact person for feedback, one launch day, and a follow-up campaign for people who set it up but did not use it.</p>
+
+  <h3>Roll-out phases</h3>
+  <div class="scroll"><table>
+    <tr><th>Phase</th><th>Who</th><th>What happens</th></tr>
+    <tr><td><b>1. Internal</b></td><td>Amplemarket’s own sales team (5–10 users), on their own pipeline</td><td>Use CI every day, log bugs, check lead quality with the data team. Support and sales learn the product.</td></tr>
+    <tr><td><b>2. Closed beta</b></td><td>15–20 customers who already use sequences, invited by name. Access is switched on per account with a feature flag.</td><td>One named contact per customer, a weekly feedback call, and a short “as is” note that the feature is still changing. Interview customers who did not start.</td></tr>
+    <tr><td><b>3. Open beta</b></td><td>All customers on plans that include CI. Opt-in banner in the app, no sales push.</td><td>Check load, rate limits and sending limits at scale. Test help articles and the in-app tour with real users.</td></tr>
+    <tr><td><b>4. General availability</b></td><td>Everyone on eligible plans, on by default</td><td>Launch day with all go-to-market channels live. Review the headline metrics after 30 and 90 days.</td></tr>
+  </table></div>
+
+  <h3>Go-to-market and communication steps</h3>
+  <p>Most steps start during the beta phases and run in parallel, so everything is ready on launch day.</p>
+  <div class="scroll"><table>
+    <tr><th>#</th><th>Step</th><th>Owner</th><th>Output</th></tr>
+    <tr><td>1</td><td>Set the launch level (full plan, because CI is a new module) and form one cross-team launch team</td><td>Product manager, Product marketing</td><td>Launch plan with owners</td></tr>
+    <tr><td>2</td><td>Legal and privacy review of the data sources behind the signals</td><td>Product manager, Legal</td><td>Approved wording on where signals come from</td></tr>
+    <tr><td>3</td><td>Value proposition and messaging: target segments, one-line positioning, proof points. Test with closed beta customers.</td><td>Product marketing</td><td>Messaging document</td></tr>
+    <tr><td>4</td><td>Content: public feature page, in-app page with FAQ, help articles (what CI is, set-up, how signals are made, privacy), use-case video</td><td>Product marketing, Web, Support</td><td>Content ready to publish</td></tr>
+    <tr><td>5</td><td>Enablement for sales, customer success and support: FAQ, short training, demo script, comparison card against main competitors</td><td>Product marketing, Sales enablement</td><td>Trained customer-facing teams</td></tr>
+    <tr><td>6</td><td>Launch day: press release, social posts, launch email to eligible customers, in-app message, feature page live</td><td>Product marketing, Marketing, Web</td><td>Everything live on the same day</td></tr>
+    <tr><td>7</td><td>Follow-up campaign: re-engage accounts that added competitors but sent no sequence, email customers who have not opened CI, publish beta customer stories</td><td>Customer marketing, Customer success</td><td>Higher activation rate</td></tr>
+    <tr><td>8</td><td>Post-launch check on the funnel: opened CI, added a competitor, contacted a first lead, active every week</td><td>Product manager, Data analyst</td><td>Report on what to fix first</td></tr>
+  </table></div>
+  <p>Step 8 uses the same funnel as the success metrics in <a href="#q2">question 2</a>. The biggest drop decides where the follow-up campaign points.</p>
+
+  <h3>Risks and fallback</h3>
+  <ul>
+    <li><b>Low lead precision:</b> pause the roll-out and fix the model before the next phase.</li>
+    <li><b>Privacy complaints:</b> a kill switch for each data source, and one named person who answers.</li>
+    <li><b>Sequence spam:</b> daily send limits per account.</li>
+    <li><b>Load at scale:</b> check rate limits in open beta, before launch day.</li>
+  </ul>
+  <p><b>Track from day 1:</b> CI opened, competitor added, lead viewed, lead added to a sequence, reply, meeting booked, “bad lead” clicked.</p>
+</section>
+
+<!-- ========== 5 ========== -->
+<section id="q5">
+  <div class="q">Question 5</div>
+  <h2>How I would prioritize four modules</h2>
+  <p class="lead">CI plus three other modules must ship by the end of the year. I score every module on the same five questions, so the choice is based on data and not on opinions.</p>
+
+  <h3>The five dimensions</h3>
+  <div class="grid">
+    <div class="card"><b>Revenue opportunity</b>How much ARR is lost or at risk because this is missing or weak? <small>Owner: Finance / RevOps</small></div>
+    <div class="card"><b>Strategic importance</b>How much feedback do we get, and how happy are users (NPS)? <small>Owner: Product</small></div>
+    <div class="card"><b>Customer value</b>How many customers would use it (reach) and how often (frequency)? <small>Owner: Product</small></div>
+    <div class="card"><b>Technical health and effort</b>How many engineers, how mature is it, does it fit our AI-native direction? <small>Owner: Engineering lead</small></div>
+    <div class="card"><b>Competitive necessity</b>Are ZoomInfo, Apollo, Lusha, Cognism, Outreach and Salesloft better than us here? <small>Owner: Product marketing</small></div>
+  </div>
+
+  <h3>What information I need</h3>
+  <div class="scroll"><table>
+    <tr><th>Dimension</th><th>Data</th><th>Where to get it</th></tr>
+    <tr><td>Revenue</td><td>ARR lost or at risk in 12 months because of this module</td><td>Churn survey, CRM lost-deal reasons, finance</td></tr>
+    <tr><td>Strategy</td><td>Feedback cases in 6 months, NPS of users</td><td>Support tool, call notes, G2 reviews, NPS survey</td></tr>
+    <tr><td>Customer value</td><td>Share of customers who could use it, and how often</td><td>Product analytics, interviews</td></tr>
+    <tr><td>Tech and effort</td><td>Engineers needed, product maturity, fit with strategy</td><td>Engineering estimate, strategy documents</td></tr>
+    <tr><td>Competition</td><td>Better, equal or behind, per competitor</td><td>G2, vendor pages, demos, win/loss notes</td></tr>
+  </table></div>
+  <p>Each answer becomes a score from 1 to 5. The final score is the average of the five (equal weights, 20% each). Ties are broken by strategic score. A <b>low</b> competitive score means we are ahead, so it is a differentiator. A <b>high</b> score means we must catch up.</p>
+
+  <h3>What the sheet says (with my starting guesses)</h3>
+  <p>I scored 26 Amplemarket products. Top of the list and the four modules planned this year:</p>
+  <div class="scroll"><table>
+    <tr><th>Rank</th><th>Product</th><th>Score</th><th>Planned this year</th><th>Why</th></tr>
+    <tr><td>1</td><td>Multichannel Sequences</td><td>4.00</td><td>No</td><td>Core product, biggest revenue</td></tr>
+    <tr><td>2</td><td>Searcher</td><td>3.87</td><td>No</td><td>Core search and data</td></tr>
+    <tr><td>3</td><td>Duo Copilot</td><td>3.73</td><td><span class="pill">Yes</span></td><td>Best fit with company direction, large build</td></tr>
+    <tr><td>7</td><td>Competitive Intelligence</td><td>3.30</td><td><span class="pill">Yes</span></td><td>Unique differentiator, medium effort</td></tr>
+    <tr><td>10</td><td>Intent Signals</td><td>3.20</td><td><span class="pill">Yes</span></td><td>Cheap to build, extends existing signals</td></tr>
+    <tr><td>10</td><td>Parallel Dialer</td><td>3.20</td><td><span class="pill">Yes</span></td><td>Heavy build, competitors are mature</td></tr>
+  </table></div>
+  <div class="tldr">CI scores lower on money and effort than the core products, but it is the only one where every competitor is behind. That is why I keep it in the plan.</div>
+  <p><small>All inputs are my estimates, not Amplemarket data. Replace them with real data from the owners above. The scales can be edited in the sheet’s Config tab.</small></p>
+
+  <h3>See the full sheet</h3>
+  <p>Open it online or download the file. It has four tabs: the matrix, how to score, the scales, and the competitor view.</p>
+  <p>
+    <a class="btn" href="https://docs.google.com/spreadsheets/d/1YcPDHras4taWRcsxGxrEnFZKuC-7PO0V/edit?gid=43957463#gid=43957463" target="_blank" rel="noopener">Open the sheet (Google Sheets)</a>
+    <a class="btn alt" href="assets/Amplemarket_Module_Prioritization_EN.xlsx" download>Download as Excel</a>
+  </p>
+</section>
+
+<footer>Maris Palopääl · Amplemarket PM homework · 9 Nov 2026</footer>
+</div>
+</body>
+</html>
