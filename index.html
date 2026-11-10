@@ -42,6 +42,13 @@ figcaption{font-size:14px;color:var(--muted);margin-top:6px}
 .card b{display:block;margin-bottom:4px}
 .pill{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;background:var(--brand-soft);color:var(--brand);font-weight:600}
 small{color:var(--muted)}
+html{scroll-behavior:smooth}
+section{scroll-margin-top:50px}
+.agenda{display:grid;gap:10px}
+.agenda a{display:grid;grid-template-columns:36px 1fr;column-gap:12px;align-items:center;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--soft)}
+.agenda a:hover{border-color:var(--brand);background:var(--brand-soft)}
+.agenda .n{grid-row:span 2;width:32px;height:32px;border-radius:50%;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+.agenda a span:last-child{color:var(--muted);font-size:15px}
 footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:16px}
 </style>
 </head>
@@ -56,6 +63,14 @@ footer{margin-top:60px;color:var(--muted);font-size:14px;border-top:1px solid va
   <h1>Amplemarket Competitive Intelligence (CI)</h1>
   <p class="lead">A simple plan: why CI, how to check it, how to measure it, how it looks, how to launch it, and what to build first.</p>
   <div class="box warn"><b>Note:</b> all numbers on this page are guesses to test. I do not have Amplemarket internal data. The prototype uses example data.</div>
+  <h3 style="margin-top:24px">Agenda <small>(click to jump)</small></h3>
+  <div class="agenda">
+    <a href="#q1"><span class="n">1</span><b>Validate the need</b><span>How I check that people want CI before we build it.</span></a>
+    <a href="#q2"><span class="n">2</span><b>Success metrics</b><span>Three numbers that show if CI works, and why.</span></a>
+    <a href="#q3"><span class="n">3</span><b>User stories and flow</b><span>The clickable prototype and the user flow in 5 steps.</span></a>
+    <a href="#q4"><span class="n">4</span><b>Roll-out plan</b><span>How CI goes from internal use to everyone.</span></a>
+    <a href="#q5"><span class="n">5</span><b>Priorities</b><span>How I choose what to build first among 4 modules.</span></a>
+  </div>
 </header>
 
 <section id="problem">
